@@ -34,8 +34,8 @@ jobs:
           context: ./
           # Note: tags has to be all lower-case
           tags: |
-            ghcr.io/${{ github.actor }}/jekylltest:latest 
-            ghcr.io/${{ github.actor }}/jekylltest:0.0.1
+            ghcr.io/${{ github.actor }}/jekyll-plantuml-build-action:latest 
+            ghcr.io/${{ github.actor }}/jekyll-plantuml-build-action:0.0.1
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
