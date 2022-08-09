@@ -12,6 +12,10 @@ case "$1" in
 	;;
 	build)
 	JEKYLL_ENV=production bundle exec jekyll build
+	if [ "$?" -ne 0 ]; then
+		echo "Error, encountered"
+		exit 1
+	fi
 	;;
 esac
 cd ${CWD}
