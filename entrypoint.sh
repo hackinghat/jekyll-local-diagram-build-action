@@ -1,8 +1,9 @@
 #!/bin/sh -l
 
 CWD=`pwd`
+echo "Switching to target path: $2"
 cd "$2"
-
+ls
 bundle config set --local path ./_gems
 bundle install
 
