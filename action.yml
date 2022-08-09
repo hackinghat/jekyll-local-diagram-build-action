@@ -11,6 +11,6 @@ outputs:
     description: 'The time the build completed'
 runs:
   using: 'docker'
-  image: ghcr.io/${{ github.actor }}/jekyll-plantuml-build-action:v1
+  image: ghcr.io/hackinghat/jekyll-plantuml-build-action:v1
   args:
     - build ${{ inputs.path }}
