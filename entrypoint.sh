@@ -1,5 +1,5 @@
 #!/bin/sh -l
-
+BRANCH=gh-pages
 CWD=`pwd`
 echo "Switching to target path: $2"
 cd "$2"
@@ -21,9 +21,21 @@ case "$1" in
 		echo "Error, encountered"
 		exit 1
 	fi
+	echo "Switching to build path"
+	cd $2/_site
+	touch .nojekyll
+	echo "Committing to branch: ${BRANCH}"
+	REMOTE_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
+	  git init && \
+	  git config user.name "${GITHUB_ACTOR}" && \
+	  git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
+	  git add . && \
+	  git commit -m "Jekyll build from Action ${GITHUB_SHA}" && \
+	  git push --force $REMOTE_REPO master:$BRANCH && \
+	  fuser -k .git || rm -rf .git && \
+	  cd ${CWD}
 	;;
 esac
-cd ${CWD}
 
 time=$(date)
 echo "::set-output name=time::$time"
