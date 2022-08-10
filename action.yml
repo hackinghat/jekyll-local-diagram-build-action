@@ -13,4 +13,5 @@ runs:
   using: 'docker'
   image: docker://ghcr.io/hackinghat/jekyll-plantuml-build-action:0.0.1
   args:
-    - build ${{ inputs.path }}
+    - build 
+    - ${{ inputs.path }}

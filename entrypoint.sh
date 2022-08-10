@@ -3,7 +3,11 @@
 CWD=`pwd`
 echo "Switching to target path: $2"
 cd "$2"
-ls
+if [ "$?" -ne 0 ]; then
+	echo "Path not found can't continue"
+	exit 1
+fi
+
 bundle config set --local path ./_gems
 bundle install
 
