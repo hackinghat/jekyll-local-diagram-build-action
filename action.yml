@@ -6,6 +6,10 @@ inputs:
     description: 'Path to the checkout'
     required: true
     default: '.'
+  token:
+    description: 'The github token to use'
+    required: false
+    default: ${{ secrets.GITHUB_TOKEN }}
 outputs:
   time: # id of output
     description: 'The time the build completed'

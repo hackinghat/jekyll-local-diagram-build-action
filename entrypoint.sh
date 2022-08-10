@@ -25,7 +25,7 @@ case "$1" in
 	cd $2/_site
 	touch .nojekyll
 	echo "Committing to branch: ${BRANCH}"
-	REMOTE_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
+	REMOTE_REPO="https://${GITHUB_ACTOR}:${INPUT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
 	  git init && \
 	  git config user.name "${GITHUB_ACTOR}" && \
 	  git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
