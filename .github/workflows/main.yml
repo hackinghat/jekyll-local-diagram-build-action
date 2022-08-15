@@ -8,10 +8,8 @@ on:
 jobs:
   # define job to build and publish docker image
   build-and-push-docker-image:
-    name: Build Docker image and push to repositories
-    # run only when code is compiling and tests are passing
+    name: Build Docker image and push to GitHub Container Registry
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,7 +25,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build image and push to Docker Hub and GitHub Container Registry
+      - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v3
         with:
           # relative path to the place where source code with Dockerfile is located

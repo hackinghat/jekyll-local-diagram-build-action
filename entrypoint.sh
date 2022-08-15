@@ -1,6 +1,8 @@
 #!/bin/sh -l
 BRANCH=gh-pages
 CWD=`pwd`
+BASEURL=
+
 echo "Switching to target path: $2"
 cd "$2"
 if [ "$?" -ne 0 ]; then
@@ -16,7 +18,7 @@ case "$1" in
 	bundle exec jekyll serve
 	;;
 	build)
-	JEKYLL_ENV=production bundle exec jekyll build
+	JEKYLL_ENV=production bundle exec jekyll build -d "${BASEURL}"
 	if [ "$?" -ne 0 ]; then
 		echo "Error, encountered"
 		exit 1
