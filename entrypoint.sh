@@ -1,7 +1,7 @@
 #!/bin/sh -l
 BRANCH=gh-pages
-CWD=`pwd`
-BASEURL="/${GITHUB_REPOSITORY}"
+CWD=$(pwd)
+BASEURL="/$(basename ${GITHUB_REPOSITORY})"
 
 echo "Switching to target path: $2"
 cd "$2"
