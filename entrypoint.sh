@@ -1,7 +1,6 @@
 #!/bin/sh -l
 BRANCH=gh-pages
 CWD=$(pwd)
-BASEURL="/$(basename ${GITHUB_REPOSITORY})"
 
 echo "Switching to target path: $2"
 cd "$2"
@@ -18,6 +17,7 @@ case "$1" in
 	bundle exec jekyll serve
 	;;
 	build)
+	BASEURL="/$(basename ${GITHUB_REPOSITORY:=})"
 	JEKYLL_ENV=production bundle exec jekyll build --baseurl ${BASEURL}
 	if [ "$?" -ne 0 ]; then
 		echo "Error, encountered"
