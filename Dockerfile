@@ -6,7 +6,7 @@ RUN rm -rf /tmp/* /var/cache/apk/*
 RUN gem install jekyll bundler
 COPY ./plantuml.sh /opt/plantuml/bin/plantuml.sh
 COPY ./mmdc.sh /opt/mmdc/bin/mmdc.sh
-COPY ./puppeteer.json /opt/mmdc/etc/pupeteer.json
+COPY ./puppeteer.json /opt/mmdc/etc/puppeteer.json
 
 RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli
 
