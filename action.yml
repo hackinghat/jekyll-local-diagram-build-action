@@ -1,6 +1,6 @@
 # action.yml
 name: 'Jekyll Plantuml Build Action'
-description: Jekyll Site Build Action that includes local PlantUML diagram generation
+description: Jekyll Site Build Action that will generate PlantUML, Mermaid and MathJax local assets 
 inputs:
   path:  
     description: 'Path to the checkout'
@@ -14,7 +14,7 @@ outputs:
     description: 'The time the build completed'
 runs:
   using: 'docker'
-  image: docker://ghcr.io/hackinghat/jekyll-plantuml-build-action:0.0.1
+  image: docker://ghcr.io/hackinghat/jekyll-local-diagram-build-action:0.0.1
   args:
     - build 
     - ${{ inputs.path }}

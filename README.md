@@ -1,1 +1,1 @@
-# jekyll-plantuml-build-action
+# jekyll-local-diagram-build-action
