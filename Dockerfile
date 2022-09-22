@@ -31,9 +31,6 @@ RUN apk add --no-cache ttf-dejavu graphviz ruby-dev jekyll git libressl openssl-
 
 ENV JAVA_HOME=/opt/plantuml/jre-18
 COPY --from=corretto-jdk /plantuml/customjre $JAVA_HOME
-COPY --from=corretto-jdk /plantuml/plantuml.jar /opt/plantuml/lib/plantuml.jar
-COPY ./plantuml.sh /opt/plantuml/bin/plantuml.sh
-COPY ./mmdc.sh /opt/mmdc/bin/mmdc.sh
 COPY ./puppeteer.json /opt/mmdc/etc/puppeteer.json
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ] 
