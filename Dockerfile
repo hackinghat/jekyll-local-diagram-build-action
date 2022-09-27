@@ -31,7 +31,6 @@ RUN apk add --no-cache ttf-dejavu graphviz ruby-dev jekyll git libressl openssl-
 
 ENV JAVA_HOME=/opt/plantuml/jre-18
 COPY --from=corretto-jdk /plantuml/customjre $JAVA_HOME
-COPY ./puppeteer.json /opt/mmdc/etc/puppeteer.json
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ] 
 
@@ -41,6 +40,6 @@ RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli && \
 RUN gem install jekyll bundler
 
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-ENV PATH="${JAVA_HOME}/bin:/opt/plantuml/bin:/opt/mmdc/bin:${PATH}"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 ENTRYPOINT [ "/entrypoint.sh" ] 
