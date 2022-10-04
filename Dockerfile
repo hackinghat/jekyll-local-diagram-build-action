@@ -1,9 +1,11 @@
 FROM amazoncorretto:18-alpine as corretto-jdk
 
-# required for strip-debug to work
+# Required for strip-debug to work
 RUN apk add --no-cache binutils curl
 
 WORKDIR /plantuml
+# Get a version of the PlantUML library in-order to build a JRE
+RUN \curl -sSL https://github.com/plantuml/plantuml/releases/download/v1.2022.8/plantuml-1.2022.8.jar -o ./plantuml.jar
 
 # Identify dependencies
 RUN $JAVA_HOME/bin/jdeps \
