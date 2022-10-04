@@ -8,7 +8,7 @@ on:
 jobs:
   # define job to build and publish docker image
   build-and-push-docker-image:
-    name: Build Docker image and push to GitHub Container Registry
+    name: Build image and push to ghcr.io
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -41,14 +41,14 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
   site_build_docs_job:
     runs-on: ubuntu-latest
-    name: A job to build this site
+    name: Build the docs
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        uses: hackinghat/jekyll-plantuml-build-action@v1
+        uses: hackinghat/jekyll-plantuml-build-action@v2
         with:
           path: /github/workspace/docs
           token: ${{ github.token }}
