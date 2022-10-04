@@ -13,4 +13,5 @@ It defines a `Dockerfile` installs the following pre-requisites that are needed 
 * **g++** for building local Gems
 * **Grahviz** for Dot diagrams (called from within PlantUML)
 * **Chromium** Mermaid.CLI installs a chromium browser but it depends on libc (which Alpine Linux does not support)
-* 
+
+# Example config
