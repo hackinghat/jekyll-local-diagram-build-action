@@ -4,7 +4,6 @@ FROM amazoncorretto:18-alpine as corretto-jdk
 RUN apk add --no-cache binutils curl
 
 WORKDIR /plantuml
-RUN \curl -sSL https://github.com/plantuml/plantuml/releases/download/v1.2022.6/plantuml-1.2022.6.jar -o ./plantuml.jar
 
 # Identify dependencies
 RUN $JAVA_HOME/bin/jdeps \
@@ -32,7 +31,6 @@ RUN apk add --no-cache ttf-dejavu graphviz ruby-dev jekyll git libressl openssl-
 ENV JAVA_HOME=/opt/plantuml/jre-18
 COPY --from=corretto-jdk /plantuml/customjre $JAVA_HOME
 COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ] 
 
 RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli && \
     rm -rf /usr/local/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/puppeteer/.local-chromium
