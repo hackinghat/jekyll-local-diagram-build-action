@@ -3,7 +3,7 @@ gem "jekyll"
 gem "minima"
 group :jekyll_plugins do
   gem "jekyll-feed"
-  gem "jekyll-local-diagram"
+  gem "jekyll-local-diagram", git: "https://github.com/hackinghat/jekyll-local-diagram"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

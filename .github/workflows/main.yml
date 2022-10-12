@@ -48,7 +48,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        uses: hackinghat/jekyll-plantuml-build-action@v2
+        uses: hackinghat/jekyll-local-diagram-build-action@v2
         with:
           path: /github/workspace/docs
           token: ${{ github.token }}
