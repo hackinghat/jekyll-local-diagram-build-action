@@ -8,6 +8,8 @@ nav_order: 2
 
 This is a showcase for [Mermaid](https://mermaid-js.github.io/mermaid/) diagrams to show what is possible with [Jekyll Local Build Action](https://github.com/jekyll-local-diagram-build-action) and to act as an integration test for [Jekyll Local Diagram](https://github.com/hackinghat/jekyll-local-diagram)
 
+All diagrams are generated images, and can be shared as files.
+
 ## Flowchart
 
 {% raw %}

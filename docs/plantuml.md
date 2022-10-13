@@ -341,7 +341,7 @@ digraph finite_state_machine {
 @endmindmap
 {% endplantuml %}
 
-## Workbreadown Structure
+## Work-breakdown Structure
 
 {% raw %}
     {% plantuml %}

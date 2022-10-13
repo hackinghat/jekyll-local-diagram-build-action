@@ -7,7 +7,7 @@ layout: home
 
 # What Is This?
 
-This is a demo site for the [Jekyll Local Diagram](https://github.com/hackinghat/jekyll-local-diagram) plugin for the popular documentation tool [Jekyll](https://jekyllrb.com).
+This is a demo site for the [Jekyll Local Diagram](https://github.com/hackinghat/jekyll-local-diagram) plugin and the [Jekyll Local Diagram Build Action](https://github.com/hackinghat/jekyll-local-diagram-build-action) for the popular documentation tool [Jekyll](https://jekyllrb.com).
 
 
 The primary purpose of this repo is as a GitHub build action that allows you to put a CI/CD workflow in something like this:
