@@ -5,7 +5,7 @@ RUN apk add --no-cache binutils curl
 
 WORKDIR /plantuml
 # Get a version of the PlantUML library in-order to build a JRE
-RUN \curl -sSL https://github.com/plantuml/plantuml/releases/download/v1.2022.8/plantuml-1.2022.8.jar -o ./plantuml.jar
+RUN \curl -sSL https://github.com/plantuml/plantuml/releases/download/v1.2022.10/plantuml-1.2022.8.jar -o ./plantuml.jar
 
 # Identify dependencies
 RUN $JAVA_HOME/bin/jdeps \
@@ -34,7 +34,7 @@ ENV JAVA_HOME=/opt/plantuml/jre-18
 COPY --from=corretto-jdk /plantuml/customjre $JAVA_HOME
 COPY entrypoint.sh /entrypoint.sh
 
-RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli && \
+RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli bpmn-to-image && \
     rm -rf /usr/local/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/puppeteer/.local-chromium
 
 RUN gem install jekyll bundler

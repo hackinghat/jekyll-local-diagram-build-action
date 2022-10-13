@@ -24,7 +24,7 @@ It defines a `Dockerfile` installs the following pre-requisites that are needed 
 * **Jekyll**
 * **Java Runtime** A custom Java JRE for [PlantUML](https://www.plantuml.com)
 * **True type fonts** needed by PlantUML to display text
-* **npm** for installing command-line Mermaid and MathJax clients
+* **npm** for installing command-line Mermaid, MathJax and BPMN clients
 * **g++** for building local Gems
 * **Grahviz** for Dot diagrams (called from within PlantUML)
 * **Chromium** Mermaid.CLI installs a chromium browser but it depends on libc (which Alpine Linux does not support)
