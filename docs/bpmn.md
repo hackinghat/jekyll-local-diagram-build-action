@@ -8,11 +8,11 @@ nav_order: 1
 
 This is a (very small) showcase for [BPMN](https://bpmn.io) diagrams to show what is possible with [Jekyll Local Build Action](https://github.com/jekyll-local-diagram-build-action) and to act as an integration test for [Jekyll Local Diagram](https://github.com/hackinghat/jekyll-local-diagram)
 
-BPMN is a little different from the other diagram types in that the source for the diagram is in XML which is a little harder to hack than markdown style diagram types.  It also breaks the flow of your Markdown documents a little with having a huge XML vomit inside it.
+BPMN is a little different from the other diagram types in that the source for the diagram is in XML which is a little harder to hack than markdown style diagram types.  It also breaks the flow of your Markdown documents a little with having a huge XML vomit inside it.  But most of all the BPMN type includes explicit layout information which the other diagram types do not tend to do (other than in a general ordering sense).
 
-However BPMN JS solves a problem that other diagrams such as [PlantUML activity diagrams](https://plantuml.com/activity-diagram-legacy) do not, since activity diagrams are really about system and object actions and BPMN is more suited to business processes.   
+However BPMN JS solves a problem that other diagrams such as [PlantUML activity diagrams](https://plantuml.com/activity-diagram-legacy) do not, since activity diagrams are really about system and object processes and BPMN has notation and constructs that are better suited to business processes.   
 
-Probably the best way to make use of BPMN JS is to draw your diagram with the [editor](https://demo.bpmn.io/new) and then save the XML and paste it into your diagram.  As far as I can tell the online editor is a local renderer and the document does not leave your host.
+Probably the best way to make use of BPMN JS is to draw your diagram with the [editor](https://demo.bpmn.io/new) and then save the XML and paste it inline into your markdown.  As far as I can tell the online editor is a local renderer and the document does not leave your host.
 
 ## Example
 
