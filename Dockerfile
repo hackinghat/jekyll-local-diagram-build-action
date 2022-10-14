@@ -40,6 +40,7 @@ RUN npm install --global mathjax-node-cli @mermaid-js/mermaid-cli bpmn-to-image 
 RUN gem install jekyll bundler
 
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+ENV CHROMIUM_FLAGS="--no-sandbox"
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 ENTRYPOINT [ "/entrypoint.sh" ] 
