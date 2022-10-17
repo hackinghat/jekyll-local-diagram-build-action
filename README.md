@@ -39,5 +39,5 @@ To the build action locally and have it watch your repo while you live edit chan
 
 ### GitHub Pages
 
-This repo dog foods itself (here)[https://hackinghat.github.io/jekyll-local-diagram-build-action/].
+This repo dog foods itself [here](https://hackinghat.github.io/jekyll-local-diagram-build-action/).
 
