@@ -1,0 +1,146 @@
+{"0": {
+    "doc": "BPMN",
+    "title": "BPMN",
+    "content": "This is a (very small) showcase for BPMN diagrams to show what is possible with Jekyll Local Build Action and to act as an integration test for Jekyll Local Diagram . BPMN is a little different from the other diagram types in that the source for the diagram is in XML which is a little harder to hack than markdown style diagram types. It also breaks the flow of your Markdown documents a little with having a huge XML vomit inside it. But most of all the BPMN type includes explicit layout information which the other diagram types do not tend to do (other than in a general ordering sense). However BPMN JS solves a problem that other diagrams such as PlantUML activity diagrams do not, since activity diagrams are really about system and object processes and BPMN has notation and constructs that are better suited to business processes. Probably the best way to make use of BPMN JS is to draw your diagram with the editor and then save the XML and paste it inline into your markdown. As far as I can tell the online editor is a local renderer and the document does not leave your host. ",
+    "url": "/jekyll-local-diagram-build-action/bpmn.html",
+    "relUrl": "/bpmn.html"
+  },"1": {
+    "doc": "BPMN",
+    "title": "Example",
+    "content": ". {% bpmn %} &lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt; &lt;bpmn:definitions xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" id=\"Definitions_1yojdrb\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"bpmn-js (https://demo.bpmn.io)\" exporterVersion=\"10.2.0\"&gt; &lt;bpmn:process id=\"Process_01h17cd\" isExecutable=\"false\"&gt; &lt;bpmn:startEvent id=\"StartEvent_0hn3ojf\"&gt; &lt;bpmn:outgoing&gt;Flow_1sqn6r3&lt;/bpmn:outgoing&gt; &lt;/bpmn:startEvent&gt; &lt;bpmn:task id=\"Activity_0mtirml\" name=\"1. Collect Underpants\"&gt; &lt;bpmn:incoming&gt;Flow_1sqn6r3&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_1yhw9no&lt;/bpmn:outgoing&gt; &lt;/bpmn:task&gt; &lt;bpmn:task id=\"Activity_1er8w44\" name=\"2. ?\"&gt; &lt;bpmn:incoming&gt;Flow_1yhw9no&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_0n86246&lt;/bpmn:outgoing&gt; &lt;/bpmn:task&gt; &lt;bpmn:sequenceFlow id=\"Flow_1yhw9no\" sourceRef=\"Activity_0mtirml\" targetRef=\"Activity_1er8w44\" /&gt; &lt;bpmn:task id=\"Activity_0g6dibj\" name=\"3. Profit\"&gt; &lt;bpmn:incoming&gt;Flow_0n86246&lt;/bpmn:incoming&gt; &lt;bpmn:outgoing&gt;Flow_1glt1d0&lt;/bpmn:outgoing&gt; &lt;/bpmn:task&gt; &lt;bpmn:sequenceFlow id=\"Flow_0n86246\" sourceRef=\"Activity_1er8w44\" targetRef=\"Activity_0g6dibj\" /&gt; &lt;bpmn:endEvent id=\"Event_0rzunrw\"&gt; &lt;bpmn:incoming&gt;Flow_1glt1d0&lt;/bpmn:incoming&gt; &lt;/bpmn:endEvent&gt; &lt;bpmn:sequenceFlow id=\"Flow_1glt1d0\" sourceRef=\"Activity_0g6dibj\" targetRef=\"Event_0rzunrw\" /&gt; &lt;bpmn:sequenceFlow id=\"Flow_1sqn6r3\" sourceRef=\"StartEvent_0hn3ojf\" targetRef=\"Activity_0mtirml\" /&gt; &lt;/bpmn:process&gt; &lt;bpmndi:BPMNDiagram id=\"BPMNDiagram_1\"&gt; &lt;bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_01h17cd\"&gt; &lt;bpmndi:BPMNShape id=\"_BPMNShape_StartEvent_2\" bpmnElement=\"StartEvent_0hn3ojf\"&gt; &lt;dc:Bounds x=\"156\" y=\"81\" width=\"36\" height=\"36\" /&gt; &lt;/bpmndi:BPMNShape&gt; &lt;bpmndi:BPMNShape id=\"Activity_0mtirml_di\" bpmnElement=\"Activity_0mtirml\"&gt; &lt;dc:Bounds x=\"260\" y=\"59\" width=\"100\" height=\"80\" /&gt; &lt;bpmndi:BPMNLabel /&gt; &lt;/bpmndi:BPMNShape&gt; &lt;bpmndi:BPMNShape id=\"Activity_1er8w44_di\" bpmnElement=\"Activity_1er8w44\"&gt; &lt;dc:Bounds x=\"410\" y=\"59\" width=\"100\" height=\"80\" /&gt; &lt;bpmndi:BPMNLabel /&gt; &lt;/bpmndi:BPMNShape&gt; &lt;bpmndi:BPMNShape id=\"Activity_0g6dibj_di\" bpmnElement=\"Activity_0g6dibj\"&gt; &lt;dc:Bounds x=\"560\" y=\"59\" width=\"100\" height=\"80\" /&gt; &lt;bpmndi:BPMNLabel /&gt; &lt;/bpmndi:BPMNShape&gt; &lt;bpmndi:BPMNShape id=\"Event_0rzunrw_di\" bpmnElement=\"Event_0rzunrw\"&gt; &lt;dc:Bounds x=\"712\" y=\"81\" width=\"36\" height=\"36\" /&gt; &lt;/bpmndi:BPMNShape&gt; &lt;bpmndi:BPMNEdge id=\"Flow_1yhw9no_di\" bpmnElement=\"Flow_1yhw9no\"&gt; &lt;di:waypoint x=\"360\" y=\"99\" /&gt; &lt;di:waypoint x=\"410\" y=\"99\" /&gt; &lt;/bpmndi:BPMNEdge&gt; &lt;bpmndi:BPMNEdge id=\"Flow_0n86246_di\" bpmnElement=\"Flow_0n86246\"&gt; &lt;di:waypoint x=\"510\" y=\"99\" /&gt; &lt;di:waypoint x=\"560\" y=\"99\" /&gt; &lt;/bpmndi:BPMNEdge&gt; &lt;bpmndi:BPMNEdge id=\"Flow_1glt1d0_di\" bpmnElement=\"Flow_1glt1d0\"&gt; &lt;di:waypoint x=\"660\" y=\"99\" /&gt; &lt;di:waypoint x=\"712\" y=\"99\" /&gt; &lt;/bpmndi:BPMNEdge&gt; &lt;bpmndi:BPMNEdge id=\"Flow_1sqn6r3_di\" bpmnElement=\"Flow_1sqn6r3\"&gt; &lt;di:waypoint x=\"192\" y=\"99\" /&gt; &lt;di:waypoint x=\"260\" y=\"99\" /&gt; &lt;/bpmndi:BPMNEdge&gt; &lt;/bpmndi:BPMNPlane&gt; &lt;/bpmndi:BPMNDiagram&gt; &lt;/bpmn:definitions&gt; {% endbpmn %} . ",
+    "url": "/jekyll-local-diagram-build-action/bpmn.html#example",
+    "relUrl": "/bpmn.html#example"
+  },"2": {
+    "doc": "Mathjax",
+    "title": "Mathjax",
+    "content": "This is a showcase for Mathjax diagrams to show what is possible with Jekyll Local Build Action and to act as an integration test for Jekyll Local Diagram . All diagrams are generated images, and can be shared as files. ",
+    "url": "/jekyll-local-diagram-build-action/mathjax.html",
+    "relUrl": "/mathjax.html"
+  },"3": {
+    "doc": "Mathjax",
+    "title": "Examples",
+    "content": "{% mathjax %} x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a} {% endmathjax %} . {% mathjax %} \\lim\\limits_{x \\to \\infty} \\exp(-x) = 0 {% endmathjax %} . ",
+    "url": "/jekyll-local-diagram-build-action/mathjax.html#examples",
+    "relUrl": "/mathjax.html#examples"
+  },"4": {
+    "doc": "Mermaid",
+    "title": "Mermaid",
+    "content": "This is a showcase for Mermaid diagrams to show what is possible with Jekyll Local Build Action and to act as an integration test for Jekyll Local Diagram . All diagrams are generated images, and can be shared as files. ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html",
+    "relUrl": "/mermaid.html"
+  },"5": {
+    "doc": "Mermaid",
+    "title": "Flowchart",
+    "content": "{% mermaid %} flowchart LR A[Hard edge] --&gt;|Link text| B(Round edge) B --&gt; C{Decision} C --&gt;|One| D[Result one] C --&gt;|Two| E[Result two] {% endmermaid %} . ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html#flowchart",
+    "relUrl": "/mermaid.html#flowchart"
+  },"6": {
+    "doc": "Mermaid",
+    "title": "Sequence Diagram",
+    "content": "{% mermaid %} sequenceDiagram participant Alice participant John links Alice: {\"Dashboard\": \"https://dashboard.contoso.com/alice\", \"Wiki\": \"https://wiki.contoso.com/alice\"} links John: {\"Dashboard\": \"https://dashboard.contoso.com/john\", \"Wiki\": \"https://wiki.contoso.com/john\"} Alice-&gt;&gt;John: Hello John, how are you? John--&gt;&gt;Alice: Great! Alice-)John: See you later! {% endmermaid %} . ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html#sequence-diagram",
+    "relUrl": "/mermaid.html#sequence-diagram"
+  },"7": {
+    "doc": "Mermaid",
+    "title": "Class Diagram",
+    "content": "{% mermaid %} classDiagram direction RL class Student { -idCard : IdCard } class IdCard{ -id : int -name : string } class Bike{ -id : int -name : string } Student \"1\" --o \"1\" IdCard : carries Student \"1\" --o \"1\" Bike : rides {% endmermaid %} . ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html#class-diagram",
+    "relUrl": "/mermaid.html#class-diagram"
+  },"8": {
+    "doc": "Mermaid",
+    "title": "Pie Chart",
+    "content": "{% mermaid %} pie title Pets adopted by volunteers \"Dogs\" : 386 \"Cats\" : 340 \"Rats\" : 35 {% endmermaid %} . ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html#pie-chart",
+    "relUrl": "/mermaid.html#pie-chart"
+  },"9": {
+    "doc": "Mermaid",
+    "title": "User Journey",
+    "content": "{% mermaid %} journey title My working day section Go to work Make tea: 5: Me Go upstairs: 3: Me Do work: 1: Me, Cat section Go home Go downstairs: 5: Me Sit down: 5: Me Sleep: 6: Me, Cat, Dog, Fish {% endmermaid %} . ",
+    "url": "/jekyll-local-diagram-build-action/mermaid.html#user-journey",
+    "relUrl": "/mermaid.html#user-journey"
+  },"10": {
+    "doc": "Plant UML",
+    "title": "Plant UML",
+    "content": "This is a showcase for Plant UML diagrams to show what is possible with Jekyll Local Build Action and to act as an integration test for Jekyll Local Diagram . All diagrams are generated images, and can be shared as files. ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html",
+    "relUrl": "/plantuml.html"
+  },"11": {
+    "doc": "Plant UML",
+    "title": "Use Case",
+    "content": "{% plantuml %} @startuml left to right direction actor \"Food Critic\" as fc rectangle Restaurant { usecase \"Eat Food\" as UC1 usecase \"Pay for Food\" as UC2 usecase \"Drink\" as UC3 } fc --&gt; UC1 fc --&gt; UC2 fc --&gt; UC3 @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#use-case",
+    "relUrl": "/plantuml.html#use-case"
+  },"12": {
+    "doc": "Plant UML",
+    "title": "Component Diagram",
+    "content": "{% plantuml %} @startuml package \"Some Group\" { HTTP - [First Component] [Another Component] } node \"Other Groups\" { FTP - [Second Component] [First Component] --&gt; FTP } cloud { [Example 1] } database \"MySql\" { folder \"This is my folder\" { [Folder 3] } frame \"Foo\" { [Frame 4] } } [Another Component] --&gt; [Example 1] [Example 1] --&gt; [Folder 3] [Folder 3] --&gt; [Frame 4] @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#component-diagram",
+    "relUrl": "/plantuml.html#component-diagram"
+  },"13": {
+    "doc": "Plant UML",
+    "title": "Sequence Diagram",
+    "content": "{% plantuml %} @startuml Bob -&gt; Alice : hello Alice -&gt; Charles : goodbye Charles -&gt; Fred : goodbye @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#sequence-diagram",
+    "relUrl": "/plantuml.html#sequence-diagram"
+  },"14": {
+    "doc": "Plant UML",
+    "title": "Activity",
+    "content": "{% plantuml %} @startuml start if (Graphviz installed?) then (yes) :process all\\ndiagrams; else (no) :process only __sequence__ and __activity__ diagrams; endif stop @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#activity",
+    "relUrl": "/plantuml.html#activity"
+  },"15": {
+    "doc": "Plant UML",
+    "title": "Deployment",
+    "content": "{% plantuml %} @startuml title Bracketed line style mix node foo foo --&gt; bar : ∅ foo -[#red,thickness=1]-&gt; bar1 : [#red,1] foo -[#red,dashed,thickness=2]-&gt; bar2 : [#red,dashed,2] foo -[#green,dashed,thickness=4]-&gt; bar3 : [#green,dashed,4] foo -[#blue,dotted,thickness=8]-&gt; bar4 : [blue,dotted,8] foo -[#blue,plain,thickness=16]-&gt; bar5 : [blue,plain,16] foo -[#blue;#green,dashed,thickness=4]-&gt; bar6 : [blue;green,dashed,4] @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#deployment",
+    "relUrl": "/plantuml.html#deployment"
+  },"16": {
+    "doc": "Plant UML",
+    "title": "Timing Diagram",
+    "content": "{% plantuml %} @startuml clock clk with period 1 binary \"Enable\" as EN @0 EN is low @5 EN is high @10 EN is low @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#timing-diagram",
+    "relUrl": "/plantuml.html#timing-diagram"
+  },"17": {
+    "doc": "Plant UML",
+    "title": "Network Diagram",
+    "content": "{% plantuml %} @startuml nwdiag { network dmz { address = \"210.x.x.x/24\" web01 [address = \"210.x.x.1\"]; web02 [address = \"210.x.x.2\"]; } } @enduml {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#network-diagram",
+    "relUrl": "/plantuml.html#network-diagram"
+  },"18": {
+    "doc": "Plant UML",
+    "title": "Salt",
+    "content": "{% plantuml %} @startsalt { Just plain text [This is my button] () Unchecked radio (X) Checked radio [] Unchecked box [X] Checked box \"Enter text here \" ^This is a droplist^ } @endsalt {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#salt",
+    "relUrl": "/plantuml.html#salt"
+  },"19": {
+    "doc": "Plant UML",
+    "title": "Finite State Machine",
+    "content": "{% plantuml %} @startdot digraph finite_state_machine { fontname=\"Helvetica,Arial,sans-serif\" node [fontname=\"Helvetica,Arial,sans-serif\"] edge [fontname=\"Helvetica,Arial,sans-serif\"] rankdir=LR; node [shape = doublecircle]; 0 3 4 8; node [shape = circle]; 0 -&gt; 2 [label = \"SS(B)\"]; 0 -&gt; 1 [label = \"SS(S)\"]; 1 -&gt; 3 [label = \"S($end)\"]; 2 -&gt; 6 [label = \"SS(b)\"]; 2 -&gt; 5 [label = \"SS(a)\"]; 2 -&gt; 4 [label = \"S(A)\"]; 5 -&gt; 7 [label = \"S(b)\"]; 5 -&gt; 5 [label = \"S(a)\"]; 6 -&gt; 6 [label = \"S(b)\"]; 6 -&gt; 5 [label = \"S(a)\"]; 7 -&gt; 8 [label = \"S(b)\"]; 7 -&gt; 5 [label = \"S(a)\"]; 8 -&gt; 6 [label = \"S(b)\"]; 8 -&gt; 5 [label = \"S(a)\"]; 8 -&gt; 9 [label = \"S(x)\"]; 9 -&gt; 10 [label = \"S(y)\"]; } @enddot {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#finite-state-machine",
+    "relUrl": "/plantuml.html#finite-state-machine"
+  },"20": {
+    "doc": "Plant UML",
+    "title": "Gantt",
+    "content": "{% plantuml %} @startgantt [Prototype design] lasts 15 days [Test prototype] lasts 10 days -- All example -- [Task 1 (1 day)] lasts 1 day [T2 (5 days)] lasts 5 days [T3 (1 week)] lasts 1 week [T4 (1 week and 4 days)] lasts 1 week and 4 days [T5 (2 weeks)] lasts 2 weeks [T6] lasts 1 week @endgantt {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#gantt",
+    "relUrl": "/plantuml.html#gantt"
+  },"21": {
+    "doc": "Plant UML",
+    "title": "Mind Map",
+    "content": "{% plantuml %} @startmindmap + root node ++ some first level node +++ second level node +++ another second level node -- another first level node -- another second level node {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#mind-map",
+    "relUrl": "/plantuml.html#mind-map"
+  },"22": {
+    "doc": "Plant UML",
+    "title": "Work-breakdown Structure",
+    "content": "{% plantuml %} @startwbs + New Job ++ Decide on Job Requirements +++ Identity gaps +++ Review JDs ++++ Sign-Up for courses ++++ Volunteer ++++ Reading ++- Checklist +++- Responsibilities +++- Location ++ CV Upload Done +++ CV Updated ++++ Spelling &amp; Grammar ++++ Check dates ---- Skills +++ Recruitment sites chosen @endwbs {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#work-breakdown-structure",
+    "relUrl": "/plantuml.html#work-breakdown-structure"
+  },"23": {
+    "doc": "Plant UML",
+    "title": "JSON",
+    "content": "{% plantuml %} @startjson { \"fruit\":\"Apple\", \"size\":\"Large\", \"color\": [\"Red\", \"Green\"] } @endjson {% endplantuml %} . ",
+    "url": "/jekyll-local-diagram-build-action/plantuml.html#json",
+    "relUrl": "/plantuml.html#json"
+  }
+}
